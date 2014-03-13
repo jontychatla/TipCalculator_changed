@@ -1,0 +1,7 @@
+com.calculator.tipcalculator.BuildConfig
+com.calculator.tipcalculator.R
+com.calculator.tipcalculator.R$attr
+com.calculator.tipcalculator.R$drawable
+com.calculator.tipcalculator.R$id
+com.calculator.tipcalculator.R$layout
+com.calculator.tipcalculator.R$string

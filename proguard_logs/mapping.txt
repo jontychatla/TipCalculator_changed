@@ -1,0 +1,51 @@
+com.calculator.tipcalculator.TipCalculator -> com.calculator.tipcalculator.TipCalculator:
+    android.widget.EditText billEditText -> a
+    java.lang.Double billTotal -> b
+    java.lang.Double customAmount -> c
+    android.widget.EditText tip10EditText -> d
+    android.widget.EditText tip15EditText -> e
+    android.widget.EditText tip20EditText -> f
+    android.widget.EditText total10EditText -> g
+    android.widget.EditText total15EditText -> h
+    android.widget.EditText total20EditText -> i
+    android.widget.EditText totalRounded10EditText -> j
+    android.widget.EditText totalRounded15EditText -> k
+    android.widget.EditText totalRounded20EditText -> l
+    android.widget.SeekBar seekBar -> m
+    android.widget.TextView customTipTextView -> n
+    int customTipValue -> o
+    android.widget.EditText finalTip -> p
+    android.widget.EditText finalTotal -> q
+    android.widget.EditText finalRoundTotal -> r
+    android.widget.EditText customAmountEditText -> s
+    android.widget.EditText customTipPercentEditText -> t
+    void onCreate(android.os.Bundle) -> onCreate
+    void updateTipValues() -> a
+    java.lang.String getFormattedString(double) -> a
+    java.lang.String getRoundedFormattedString(double) -> b
+    void updateCustomTipValue() -> b
+    void updateCustom() -> c
+    java.lang.Double access$002(com.calculator.tipcalculator.TipCalculator,java.lang.Double) -> a
+    void access$100(com.calculator.tipcalculator.TipCalculator) -> a
+    java.lang.Double access$202(com.calculator.tipcalculator.TipCalculator,java.lang.Double) -> b
+    java.lang.Double access$000(com.calculator.tipcalculator.TipCalculator) -> b
+    java.lang.Double access$200(com.calculator.tipcalculator.TipCalculator) -> c
+    java.lang.String access$300(com.calculator.tipcalculator.TipCalculator,double) -> a
+    android.widget.EditText access$400(com.calculator.tipcalculator.TipCalculator) -> d
+    int access$502(com.calculator.tipcalculator.TipCalculator,int) -> a
+    void access$600(com.calculator.tipcalculator.TipCalculator) -> e
+com.calculator.tipcalculator.TipCalculator$BillTotalTextWatchListener -> com.calculator.tipcalculator.a:
+    com.calculator.tipcalculator.TipCalculator this$0 -> a
+    void beforeTextChanged(java.lang.CharSequence,int,int,int) -> beforeTextChanged
+    void onTextChanged(java.lang.CharSequence,int,int,int) -> onTextChanged
+    void afterTextChanged(android.text.Editable) -> afterTextChanged
+com.calculator.tipcalculator.TipCalculator$CustomAmountTextWatchListener -> com.calculator.tipcalculator.b:
+    com.calculator.tipcalculator.TipCalculator this$0 -> a
+    void beforeTextChanged(java.lang.CharSequence,int,int,int) -> beforeTextChanged
+    void onTextChanged(java.lang.CharSequence,int,int,int) -> onTextChanged
+    void afterTextChanged(android.text.Editable) -> afterTextChanged
+com.calculator.tipcalculator.TipCalculator$MySeekChangeListener -> com.calculator.tipcalculator.c:
+    com.calculator.tipcalculator.TipCalculator this$0 -> a
+    void onProgressChanged(android.widget.SeekBar,int,boolean) -> onProgressChanged
+    void onStartTrackingTouch(android.widget.SeekBar) -> onStartTrackingTouch
+    void onStopTrackingTouch(android.widget.SeekBar) -> onStopTrackingTouch

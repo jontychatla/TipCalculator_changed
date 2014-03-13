@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/addEthnic"  android:title="@string/addEthnic"/>
+    <item android:id="@+id/addCity"  android:title="@string/addCity"/>
+    <item android:id="@+id/addState" android:title="@string/addState"/>
+    <item android:id="@+id/addPlace"  android:title="@string/addPlace"/>
+
+    <!--<item android:id="@+id/saveTipInfoMenu" android:icon="@android:drawable/ic_menu_save">Save</item>-->
+</menu>

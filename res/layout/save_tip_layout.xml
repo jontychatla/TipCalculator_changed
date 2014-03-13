@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:useDefaultMargins="true"
+    android:alignmentMode="alignMargins"
+    android:columnCount="4"
+    android:layout_marginTop="30dp"
+    android:id="@+id/saveTipMainViewTableLayoutId"
+    android:paddingLeft="40dp"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/placeLabel"
+        android:id="@+id/placeLabelTextView"
+        style="@style/SaveTipLabelView"
+        android:layout_column="0"
+        android:layout_gravity="right"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/placeEditText"
+        style="@style/SaveTipTextFieldView"
+        android:inputType="textCapWords"
+        android:ems="7"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dateLabel"
+        android:id="@+id/dateLabelTextView"
+        style="@style/SaveTipLabelView"
+        android:layout_column="0"
+        android:layout_gravity="right"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dateEditText"
+        android:hint="@string/dateHint"
+        style="@style/SaveTipTextFieldView"
+        android:ems="7"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/datePickerButton"
+        android:onClick="showDatePickerDialog"
+        android:text="@string/pickDateLabel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/billAmountLabel"
+        android:id="@+id/billAmountLabelTextView"
+        style="@style/SaveTipLabelView"
+        android:layout_column="0"
+        android:layout_gravity="right"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:id="@+id/billAmountEditText"
+        style="@style/SaveTipTextFieldView"
+        android:ems="7"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tipAmountLabel"
+        android:id="@+id/tipAmountLabelTextView"
+        style="@style/SaveTipLabelView"
+        android:layout_column="0"
+        android:layout_gravity="right"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:id="@+id/tipAmountEditText"
+        style="@style/SaveTipTextFieldView"
+        android:ems="7"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        android:gravity="center"
+        android:id="@+id/saveButton"
+        android:layout_column="1"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        />
+</GridLayout>

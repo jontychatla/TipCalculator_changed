@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="lightTheme">
+        <item name="android:background">@android:color/white</item>
+        <item name="android:textColor">@android:color/black</item>
+
+    </style>
+
+    <style name="Calc" parent="@style/_Calc"/>
+
+    <style name="_Calc" parent="android:Theme.Holo.Light.DarkActionBar">
+
+        <item name="android:editTextBackground">@drawable/calc_edit_text_holo_light</item>
+
+        <item name="android:buttonStyle">@style/ButtonCalc</item>
+
+        <item name="android:imageButtonStyle">@style/ImageButtonCalc</item>
+
+        <item name="android:dropDownSpinnerStyle">@style/SpinnerCalc</item>
+
+        <item name="android:seekBarStyle">@style/SeekBarCalc</item>
+
+        <item name="android:textViewStyle">@style/TextViewCalc</item>
+    </style>
+
+</resources>

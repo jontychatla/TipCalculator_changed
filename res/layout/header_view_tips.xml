@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+    <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/frameId"
+            >
+        <TextView
+                android:id="@+id/place"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:text="Place"
+                tools:text="Place"
+                android:gravity="left|center_vertical"
+                style="@style/ListTextViewCalc.Header"
+                android:paddingLeft="5dp"
+                />
+
+        <TextView
+                android:id="@+id/date"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:text="Date"
+                android:textAppearance="?android:textAppearanceMedium"
+                tools:text="Hello"
+                android:gravity="left|center"
+                style="@style/ListTextViewCalc.Header"
+                />
+
+        <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="right"
+                >
+            <TextView
+                    android:id="@+id/billAmount"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bill Amount"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    tools:text="Hello"
+                    android:layout_centerVertical="true"
+                    android:gravity="left"
+                    style="@style/ListTextViewCalc.Header"
+                    android:layout_toLeftOf="@+id/tipAmount"/>
+
+            <TextView
+                    android:id="@+id/tipAmount"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="Tip Amount"
+                    android:layout_alignParentRight="true"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    tools:text="Hello"
+                    android:layout_centerVertical="true"
+                    android:gravity="right|center_vertical"
+                    style="@style/ListTextViewCalc.Header"
+                    android:paddingRight="5dp"
+                    />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/header_divider"/>
+</LinearLayout>

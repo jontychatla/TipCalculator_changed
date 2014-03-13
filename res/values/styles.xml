@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="SaveTipLabelView">
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:gravity">right</item>
+    </style>
+    <style name="SaveTipTableRowView">
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+    <style name="SaveTipTextFieldView">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="MainLinearLayout">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingTop">5dp</item>
+    </style>
+
+    <style name="MainTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+
+    <style name="ButtonCalc" parent="android:Widget.Holo.Light.Button">
+        <item name="android:background">@drawable/calc_btn_default_holo_light</item>
+    </style>
+
+    <style name="ImageButtonCalc" parent="android:Widget.Holo.Light.ImageButton">
+        <item name="android:background">@drawable/calc_btn_default_holo_light</item>
+    </style>
+
+    <style name="SpinnerCalc" parent="android:Widget.Holo.Light.Spinner">
+        <item name="android:background">@drawable/calc_spinner_background_holo_light</item>
+        <item name="android:dropDownSelector">@drawable/calc_list_selector_holo_light</item>
+    </style>
+
+    <style name="SeekBarCalc" parent="android:Widget.Holo.Light.SeekBar">
+        <item name="android:progressDrawable">@drawable/calc_scrubber_progress_horizontal_holo_light</item>
+        <item name="android:indeterminateDrawable">@drawable/calc_scrubber_progress_horizontal_holo_light</item>
+        <item name="android:thumb">@drawable/calc_scrubber_control_selector_holo_light</item>
+    </style>
+
+    <style name="TextViewCalc" parent="android:Widget.Holo.Light.TextView">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <style name="ListTextViewCalc" parent="@android:TextAppearance.Small">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <style name="ListTextViewCalc.Header" parent="@android:TextAppearance.Small">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+
+</resources>

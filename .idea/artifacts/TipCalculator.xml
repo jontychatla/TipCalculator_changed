@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="apk" name="TipCalculator">
+    <output-path>$PROJECT_DIR$/out/artifacts/TipCalculator</output-path>
+    <properties id="android-properties">
+      <options>
+        <option name="keyAlias" value="android-self-key" />
+        <option name="keyPassword" value="YmhhcmF0" />
+        <option name="keyStorePassword" value="YmhhcmF0" />
+        <option name="keyStoreUrl" value="file://$PROJECT_DIR$/../my-release-key.keystore" />
+        <option name="proGuardCfgFiles">
+          <list>
+            <option value="file://%MODULE_SDK_HOME%/tools/proguard/proguard-android.txt" />
+          </list>
+        </option>
+        <option name="signingMode" value="RELEASE_SIGNED" />
+      </options>
+    </properties>
+    <root id="archive" name="TipCalculator.apk">
+      <element id="android-final-package" facet="TipCalculator/android/Android" />
+    </root>
+  </artifact>
+</component>

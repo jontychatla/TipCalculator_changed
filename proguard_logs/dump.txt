@@ -1,0 +1,1405 @@
+_____________________________________________________________________
++ Program class: com/calculator/tipcalculator/TipCalculator
+  Superclass:    android/app/Activity
+  Major version: 0x33
+  Minor version: 0x0
+  Access flags:  0x21
+    = public class com.calculator.tipcalculator.TipCalculator extends android.app.Activity
+
+Interfaces (count = 0):
+
+Constant Pool (count = 209):
+  + Integer [2130903040]
+  + Integer [2131034115]
+  + Integer [2131034122]
+  + Integer [2131034123]
+  + Integer [2131034124]
+  + Integer [2131034127]
+  + Integer [2131034128]
+  + Integer [2131034129]
+  + Integer [2131034131]
+  + Integer [2131034132]
+  + Integer [2131034133]
+  + Integer [2131034136]
+  + Integer [2131034137]
+  + Integer [2131034140]
+  + Integer [2131034142]
+  + Integer [2131034144]
+  + Integer [2131034146]
+  + Integer [2131034148]
+  + String [%]
+  + String [%.2f]
+  + String [%d]
+  + Class [android/app/Activity]
+  + Class [android/widget/EditText]
+  + Class [android/widget/SeekBar]
+  + Class [android/widget/TextView]
+  + Class [com/calculator/tipcalculator/TipCalculator]
+  + Class [com/calculator/tipcalculator/a]
+  + Class [com/calculator/tipcalculator/b]
+  + Class [com/calculator/tipcalculator/c]
+  + Class [java/lang/Double]
+  + Class [java/lang/Long]
+  + Class [java/lang/Math]
+  + Class [java/lang/Object]
+  + Class [java/lang/String]
+  + Class [java/lang/StringBuilder]
+  + Double [0.01]
+  + Double [0.1]
+  + Double [0.15]
+  + Double [0.2]
+  + Fieldref [com/calculator/tipcalculator/TipCalculator.a Landroid/widget/EditText;]
+  + Fieldref [com/calculator/tipcalculator/TipCalculator.b Ljava/lang/Double;]
+  + Fieldref [com/calculator/tipcalculator/TipCalculator.c Ljava/lang/Double;]
+  + Fieldref [com/calculator/tipcalculator/TipCalculator.d Landroid/widget/EditText;]
+  + Fieldref [com/calculator/tipcalculator/TipCalculator.e Landroid/widget/EditText;]
+  + Fieldref [com/calculator/tipcalculator/TipCalculator.f Landroid/widget/EditText;]
+  + Fieldref [com/calculator/tipcalculator/TipCalculator.g Landroid/widget/EditText;]
+  + Fieldref [com/calculator/tipcalculator/TipCalculator.h Landroid/widget/EditText;]
+  + Fieldref [com/calculator/tipcalculator/TipCalculator.i Landroid/widget/EditText;]
+  + Fieldref [com/calculator/tipcalculator/TipCalculator.j Landroid/widget/EditText;]
+  + Fieldref [com/calculator/tipcalculator/TipCalculator.k Landroid/widget/EditText;]
+  + Fieldref [com/calculator/tipcalculator/TipCalculator.l Landroid/widget/EditText;]
+  + Fieldref [com/calculator/tipcalculator/TipCalculator.m Landroid/widget/SeekBar;]
+  + Fieldref [com/calculator/tipcalculator/TipCalculator.n Landroid/widget/TextView;]
+  + Fieldref [com/calculator/tipcalculator/TipCalculator.o I]
+  + Fieldref [com/calculator/tipcalculator/TipCalculator.p Landroid/widget/EditText;]
+  + Fieldref [com/calculator/tipcalculator/TipCalculator.q Landroid/widget/EditText;]
+  + Fieldref [com/calculator/tipcalculator/TipCalculator.r Landroid/widget/EditText;]
+  + Fieldref [com/calculator/tipcalculator/TipCalculator.s Landroid/widget/EditText;]
+  + Fieldref [com/calculator/tipcalculator/TipCalculator.t Landroid/widget/EditText;]
+  + Methodref [android/app/Activity.<init> ()V]
+  + Methodref [android/app/Activity.onCreate (Landroid/os/Bundle;)V]
+  + Methodref [android/widget/EditText.addTextChangedListener (Landroid/text/TextWatcher;)V]
+  + Methodref [android/widget/EditText.setText (Ljava/lang/CharSequence;)V]
+  + Methodref [android/widget/SeekBar.setOnSeekBarChangeListener (Landroid/widget/SeekBar$OnSeekBarChangeListener;)V]
+  + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
+  + Methodref [com/calculator/tipcalculator/TipCalculator.a ()V]
+  + Methodref [com/calculator/tipcalculator/TipCalculator.a (D)Ljava/lang/String;]
+  + Methodref [com/calculator/tipcalculator/TipCalculator.b ()V]
+  + Methodref [com/calculator/tipcalculator/TipCalculator.b (D)Ljava/lang/String;]
+  + Methodref [com/calculator/tipcalculator/TipCalculator.c ()V]
+  + Methodref [com/calculator/tipcalculator/TipCalculator.findViewById (I)Landroid/view/View;]
+  + Methodref [com/calculator/tipcalculator/TipCalculator.setContentView (I)V]
+  + Methodref [com/calculator/tipcalculator/a.<init> (Lcom/calculator/tipcalculator/TipCalculator;)V]
+  + Methodref [com/calculator/tipcalculator/b.<init> (Lcom/calculator/tipcalculator/TipCalculator;)V]
+  + Methodref [com/calculator/tipcalculator/c.<init> (Lcom/calculator/tipcalculator/TipCalculator;)V]
+  + Methodref [java/lang/Double.doubleValue ()D]
+  + Methodref [java/lang/Double.valueOf (D)Ljava/lang/Double;]
+  + Methodref [java/lang/Long.valueOf (J)Ljava/lang/Long;]
+  + Methodref [java/lang/Math.round (D)J]
+  + Methodref [java/lang/String.format (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
+  + Methodref [java/lang/StringBuilder.<init> ()V]
+  + Methodref [java/lang/StringBuilder.append (I)Ljava/lang/StringBuilder;]
+  + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+  + NameAndType [<init> ()V]
+  + NameAndType [<init> (Lcom/calculator/tipcalculator/TipCalculator;)V]
+  + NameAndType [a ()V]
+  + NameAndType [a (D)Ljava/lang/String;]
+  + NameAndType [a Landroid/widget/EditText;]
+  + NameAndType [addTextChangedListener (Landroid/text/TextWatcher;)V]
+  + NameAndType [append (I)Ljava/lang/StringBuilder;]
+  + NameAndType [append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + NameAndType [b ()V]
+  + NameAndType [b (D)Ljava/lang/String;]
+  + NameAndType [b Ljava/lang/Double;]
+  + NameAndType [c ()V]
+  + NameAndType [c Ljava/lang/Double;]
+  + NameAndType [d Landroid/widget/EditText;]
+  + NameAndType [doubleValue ()D]
+  + NameAndType [e Landroid/widget/EditText;]
+  + NameAndType [f Landroid/widget/EditText;]
+  + NameAndType [findViewById (I)Landroid/view/View;]
+  + NameAndType [format (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
+  + NameAndType [g Landroid/widget/EditText;]
+  + NameAndType [h Landroid/widget/EditText;]
+  + NameAndType [i Landroid/widget/EditText;]
+  + NameAndType [j Landroid/widget/EditText;]
+  + NameAndType [k Landroid/widget/EditText;]
+  + NameAndType [l Landroid/widget/EditText;]
+  + NameAndType [m Landroid/widget/SeekBar;]
+  + NameAndType [n Landroid/widget/TextView;]
+  + NameAndType [o I]
+  + NameAndType [onCreate (Landroid/os/Bundle;)V]
+  + NameAndType [p Landroid/widget/EditText;]
+  + NameAndType [q Landroid/widget/EditText;]
+  + NameAndType [r Landroid/widget/EditText;]
+  + NameAndType [round (D)J]
+  + NameAndType [s Landroid/widget/EditText;]
+  + NameAndType [setContentView (I)V]
+  + NameAndType [setOnSeekBarChangeListener (Landroid/widget/SeekBar$OnSeekBarChangeListener;)V]
+  + NameAndType [setText (Ljava/lang/CharSequence;)V]
+  + NameAndType [t Landroid/widget/EditText;]
+  + NameAndType [toString ()Ljava/lang/String;]
+  + NameAndType [valueOf (D)Ljava/lang/Double;]
+  + NameAndType [valueOf (J)Ljava/lang/Long;]
+  + Utf8 [%]
+  + Utf8 [%.2f]
+  + Utf8 [%d]
+  + Utf8 [()D]
+  + Utf8 [()Ljava/lang/String;]
+  + Utf8 [()V]
+  + Utf8 [(D)J]
+  + Utf8 [(D)Ljava/lang/Double;]
+  + Utf8 [(D)Ljava/lang/String;]
+  + Utf8 [(I)Landroid/view/View;]
+  + Utf8 [(I)Ljava/lang/StringBuilder;]
+  + Utf8 [(I)V]
+  + Utf8 [(J)Ljava/lang/Long;]
+  + Utf8 [(Landroid/os/Bundle;)V]
+  + Utf8 [(Landroid/text/TextWatcher;)V]
+  + Utf8 [(Landroid/widget/SeekBar$OnSeekBarChangeListener;)V]
+  + Utf8 [(Lcom/calculator/tipcalculator/TipCalculator;)Landroid/widget/EditText;]
+  + Utf8 [(Lcom/calculator/tipcalculator/TipCalculator;)Ljava/lang/Double;]
+  + Utf8 [(Lcom/calculator/tipcalculator/TipCalculator;)V]
+  + Utf8 [(Lcom/calculator/tipcalculator/TipCalculator;D)Ljava/lang/String;]
+  + Utf8 [(Lcom/calculator/tipcalculator/TipCalculator;I)I]
+  + Utf8 [(Lcom/calculator/tipcalculator/TipCalculator;Ljava/lang/Double;)Ljava/lang/Double;]
+  + Utf8 [(Ljava/lang/CharSequence;)V]
+  + Utf8 [(Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + Utf8 [(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [I]
+  + Utf8 [Landroid/widget/EditText;]
+  + Utf8 [Landroid/widget/SeekBar;]
+  + Utf8 [Landroid/widget/TextView;]
+  + Utf8 [Ljava/lang/Double;]
+  + Utf8 [StackMapTable]
+  + Utf8 [a]
+  + Utf8 [addTextChangedListener]
+  + Utf8 [android/app/Activity]
+  + Utf8 [android/widget/EditText]
+  + Utf8 [android/widget/SeekBar]
+  + Utf8 [android/widget/TextView]
+  + Utf8 [append]
+  + Utf8 [b]
+  + Utf8 [c]
+  + Utf8 [com/calculator/tipcalculator/TipCalculator]
+  + Utf8 [com/calculator/tipcalculator/a]
+  + Utf8 [com/calculator/tipcalculator/b]
+  + Utf8 [com/calculator/tipcalculator/c]
+  + Utf8 [d]
+  + Utf8 [doubleValue]
+  + Utf8 [e]
+  + Utf8 [f]
+  + Utf8 [findViewById]
+  + Utf8 [format]
+  + Utf8 [g]
+  + Utf8 [h]
+  + Utf8 [i]
+  + Utf8 [j]
+  + Utf8 [java/lang/Double]
+  + Utf8 [java/lang/Long]
+  + Utf8 [java/lang/Math]
+  + Utf8 [java/lang/Object]
+  + Utf8 [java/lang/String]
+  + Utf8 [java/lang/StringBuilder]
+  + Utf8 [k]
+  + Utf8 [l]
+  + Utf8 [m]
+  + Utf8 [n]
+  + Utf8 [o]
+  + Utf8 [onCreate]
+  + Utf8 [p]
+  + Utf8 [q]
+  + Utf8 [r]
+  + Utf8 [round]
+  + Utf8 [s]
+  + Utf8 [setContentView]
+  + Utf8 [setOnSeekBarChangeListener]
+  + Utf8 [setText]
+  + Utf8 [t]
+  + Utf8 [toString]
+  + Utf8 [valueOf]
+
+Fields (count = 20):
+  + Field:        a Landroid/widget/EditText;
+    Access flags: 0x2
+      = private android.widget.EditText a
+  + Field:        b Ljava/lang/Double;
+    Access flags: 0x2
+      = private java.lang.Double b
+  + Field:        c Ljava/lang/Double;
+    Access flags: 0x2
+      = private java.lang.Double c
+  + Field:        d Landroid/widget/EditText;
+    Access flags: 0x2
+      = private android.widget.EditText d
+  + Field:        e Landroid/widget/EditText;
+    Access flags: 0x2
+      = private android.widget.EditText e
+  + Field:        f Landroid/widget/EditText;
+    Access flags: 0x2
+      = private android.widget.EditText f
+  + Field:        g Landroid/widget/EditText;
+    Access flags: 0x2
+      = private android.widget.EditText g
+  + Field:        h Landroid/widget/EditText;
+    Access flags: 0x2
+      = private android.widget.EditText h
+  + Field:        i Landroid/widget/EditText;
+    Access flags: 0x2
+      = private android.widget.EditText i
+  + Field:        j Landroid/widget/EditText;
+    Access flags: 0x2
+      = private android.widget.EditText j
+  + Field:        k Landroid/widget/EditText;
+    Access flags: 0x2
+      = private android.widget.EditText k
+  + Field:        l Landroid/widget/EditText;
+    Access flags: 0x2
+      = private android.widget.EditText l
+  + Field:        m Landroid/widget/SeekBar;
+    Access flags: 0x2
+      = private android.widget.SeekBar m
+  + Field:        n Landroid/widget/TextView;
+    Access flags: 0x2
+      = private android.widget.TextView n
+  + Field:        o I
+    Access flags: 0x2
+      = private int o
+  + Field:        p Landroid/widget/EditText;
+    Access flags: 0x2
+      = private android.widget.EditText p
+  + Field:        q Landroid/widget/EditText;
+    Access flags: 0x2
+      = private android.widget.EditText q
+  + Field:        r Landroid/widget/EditText;
+    Access flags: 0x2
+      = private android.widget.EditText r
+  + Field:        s Landroid/widget/EditText;
+    Access flags: 0x2
+      = private android.widget.EditText s
+  + Field:        t Landroid/widget/EditText;
+    Access flags: 0x2
+      = private android.widget.EditText t
+
+Methods (count = 16):
+  - Method:       <init>()V
+    Access flags: 0x1
+      = public TipCalculator()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 27, locals = 1, stack = 3):
+      [0] aload_0 v0
+      [1] invokespecial #64
+        + Methodref [android/app/Activity.<init> ()V]
+      [4] aload_0 v0
+      [5] dconst_0
+      [6] invokestatic #81
+        + Methodref [java/lang/Double.valueOf (D)Ljava/lang/Double;]
+      [9] putfield #45
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.b Ljava/lang/Double;]
+      [12] aload_0 v0
+      [13] dconst_0
+      [14] invokestatic #81
+        + Methodref [java/lang/Double.valueOf (D)Ljava/lang/Double;]
+      [17] putfield #46
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.c Ljava/lang/Double;]
+      [20] aload_0 v0
+      [21] bipush 18
+      [23] putfield #58
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.o I]
+      [26] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onCreate(Landroid/os/Bundle;)V
+    Access flags: 0x1
+      = public void onCreate(android.os.Bundle)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 278, locals = 2, stack = 4):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] invokespecial #65
+        + Methodref [android/app/Activity.onCreate (Landroid/os/Bundle;)V]
+      [5] aload_0 v0
+      [6] ldc #1
+        + Integer [2130903040]
+      [8] invokevirtual #76
+        + Methodref [com/calculator/tipcalculator/TipCalculator.setContentView (I)V]
+      [11] aload_0 v0
+      [12] aload_0 v0
+      [13] ldc #2
+        + Integer [2131034115]
+      [15] invokevirtual #75
+        + Methodref [com/calculator/tipcalculator/TipCalculator.findViewById (I)Landroid/view/View;]
+      [18] checkcast #23
+        + Class [android/widget/EditText]
+      [21] putfield #44
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.a Landroid/widget/EditText;]
+      [24] aload_0 v0
+      [25] aload_0 v0
+      [26] ldc #3
+        + Integer [2131034122]
+      [28] invokevirtual #75
+        + Methodref [com/calculator/tipcalculator/TipCalculator.findViewById (I)Landroid/view/View;]
+      [31] checkcast #23
+        + Class [android/widget/EditText]
+      [34] putfield #47
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.d Landroid/widget/EditText;]
+      [37] aload_0 v0
+      [38] aload_0 v0
+      [39] ldc #4
+        + Integer [2131034123]
+      [41] invokevirtual #75
+        + Methodref [com/calculator/tipcalculator/TipCalculator.findViewById (I)Landroid/view/View;]
+      [44] checkcast #23
+        + Class [android/widget/EditText]
+      [47] putfield #48
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.e Landroid/widget/EditText;]
+      [50] aload_0 v0
+      [51] aload_0 v0
+      [52] ldc #5
+        + Integer [2131034124]
+      [54] invokevirtual #75
+        + Methodref [com/calculator/tipcalculator/TipCalculator.findViewById (I)Landroid/view/View;]
+      [57] checkcast #23
+        + Class [android/widget/EditText]
+      [60] putfield #49
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.f Landroid/widget/EditText;]
+      [63] aload_0 v0
+      [64] aload_0 v0
+      [65] ldc #12
+        + Integer [2131034136]
+      [67] invokevirtual #75
+        + Methodref [com/calculator/tipcalculator/TipCalculator.findViewById (I)Landroid/view/View;]
+      [70] checkcast #24
+        + Class [android/widget/SeekBar]
+      [73] putfield #56
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.m Landroid/widget/SeekBar;]
+      [76] aload_0 v0
+      [77] aload_0 v0
+      [78] ldc #13
+        + Integer [2131034137]
+      [80] invokevirtual #75
+        + Methodref [com/calculator/tipcalculator/TipCalculator.findViewById (I)Landroid/view/View;]
+      [83] checkcast #25
+        + Class [android/widget/TextView]
+      [86] putfield #57
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.n Landroid/widget/TextView;]
+      [89] aload_0 v0
+      [90] aload_0 v0
+      [91] ldc #6
+        + Integer [2131034127]
+      [93] invokevirtual #75
+        + Methodref [com/calculator/tipcalculator/TipCalculator.findViewById (I)Landroid/view/View;]
+      [96] checkcast #23
+        + Class [android/widget/EditText]
+      [99] putfield #50
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.g Landroid/widget/EditText;]
+      [102] aload_0 v0
+      [103] aload_0 v0
+      [104] ldc #7
+        + Integer [2131034128]
+      [106] invokevirtual #75
+        + Methodref [com/calculator/tipcalculator/TipCalculator.findViewById (I)Landroid/view/View;]
+      [109] checkcast #23
+        + Class [android/widget/EditText]
+      [112] putfield #51
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.h Landroid/widget/EditText;]
+      [115] aload_0 v0
+      [116] aload_0 v0
+      [117] ldc #8
+        + Integer [2131034129]
+      [119] invokevirtual #75
+        + Methodref [com/calculator/tipcalculator/TipCalculator.findViewById (I)Landroid/view/View;]
+      [122] checkcast #23
+        + Class [android/widget/EditText]
+      [125] putfield #52
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.i Landroid/widget/EditText;]
+      [128] aload_0 v0
+      [129] aload_0 v0
+      [130] ldc #9
+        + Integer [2131034131]
+      [132] invokevirtual #75
+        + Methodref [com/calculator/tipcalculator/TipCalculator.findViewById (I)Landroid/view/View;]
+      [135] checkcast #23
+        + Class [android/widget/EditText]
+      [138] putfield #53
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.j Landroid/widget/EditText;]
+      [141] aload_0 v0
+      [142] aload_0 v0
+      [143] ldc #10
+        + Integer [2131034132]
+      [145] invokevirtual #75
+        + Methodref [com/calculator/tipcalculator/TipCalculator.findViewById (I)Landroid/view/View;]
+      [148] checkcast #23
+        + Class [android/widget/EditText]
+      [151] putfield #54
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.k Landroid/widget/EditText;]
+      [154] aload_0 v0
+      [155] aload_0 v0
+      [156] ldc #11
+        + Integer [2131034133]
+      [158] invokevirtual #75
+        + Methodref [com/calculator/tipcalculator/TipCalculator.findViewById (I)Landroid/view/View;]
+      [161] checkcast #23
+        + Class [android/widget/EditText]
+      [164] putfield #55
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.l Landroid/widget/EditText;]
+      [167] aload_0 v0
+      [168] aload_0 v0
+      [169] ldc #14
+        + Integer [2131034140]
+      [171] invokevirtual #75
+        + Methodref [com/calculator/tipcalculator/TipCalculator.findViewById (I)Landroid/view/View;]
+      [174] checkcast #23
+        + Class [android/widget/EditText]
+      [177] putfield #59
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.p Landroid/widget/EditText;]
+      [180] aload_0 v0
+      [181] aload_0 v0
+      [182] ldc #15
+        + Integer [2131034142]
+      [184] invokevirtual #75
+        + Methodref [com/calculator/tipcalculator/TipCalculator.findViewById (I)Landroid/view/View;]
+      [187] checkcast #23
+        + Class [android/widget/EditText]
+      [190] putfield #60
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.q Landroid/widget/EditText;]
+      [193] aload_0 v0
+      [194] aload_0 v0
+      [195] ldc #16
+        + Integer [2131034144]
+      [197] invokevirtual #75
+        + Methodref [com/calculator/tipcalculator/TipCalculator.findViewById (I)Landroid/view/View;]
+      [200] checkcast #23
+        + Class [android/widget/EditText]
+      [203] putfield #61
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.r Landroid/widget/EditText;]
+      [206] aload_0 v0
+      [207] aload_0 v0
+      [208] ldc #17
+        + Integer [2131034146]
+      [210] invokevirtual #75
+        + Methodref [com/calculator/tipcalculator/TipCalculator.findViewById (I)Landroid/view/View;]
+      [213] checkcast #23
+        + Class [android/widget/EditText]
+      [216] putfield #62
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.s Landroid/widget/EditText;]
+      [219] aload_0 v0
+      [220] aload_0 v0
+      [221] ldc #18
+        + Integer [2131034148]
+      [223] invokevirtual #75
+        + Methodref [com/calculator/tipcalculator/TipCalculator.findViewById (I)Landroid/view/View;]
+      [226] checkcast #23
+        + Class [android/widget/EditText]
+      [229] putfield #63
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.t Landroid/widget/EditText;]
+      [232] aload_0 v0
+      [233] getfield #44
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.a Landroid/widget/EditText;]
+      [236] new #27
+        + Class [com/calculator/tipcalculator/a]
+      [239] dup
+      [240] aload_0 v0
+      [241] invokespecial #77
+        + Methodref [com/calculator/tipcalculator/a.<init> (Lcom/calculator/tipcalculator/TipCalculator;)V]
+      [244] invokevirtual #66
+        + Methodref [android/widget/EditText.addTextChangedListener (Landroid/text/TextWatcher;)V]
+      [247] aload_0 v0
+      [248] getfield #56
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.m Landroid/widget/SeekBar;]
+      [251] new #29
+        + Class [com/calculator/tipcalculator/c]
+      [254] dup
+      [255] aload_0 v0
+      [256] invokespecial #79
+        + Methodref [com/calculator/tipcalculator/c.<init> (Lcom/calculator/tipcalculator/TipCalculator;)V]
+      [259] invokevirtual #68
+        + Methodref [android/widget/SeekBar.setOnSeekBarChangeListener (Landroid/widget/SeekBar$OnSeekBarChangeListener;)V]
+      [262] aload_0 v0
+      [263] getfield #62
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.s Landroid/widget/EditText;]
+      [266] new #28
+        + Class [com/calculator/tipcalculator/b]
+      [269] dup
+      [270] aload_0 v0
+      [271] invokespecial #78
+        + Methodref [com/calculator/tipcalculator/b.<init> (Lcom/calculator/tipcalculator/TipCalculator;)V]
+      [274] invokevirtual #66
+        + Methodref [android/widget/EditText.addTextChangedListener (Landroid/text/TextWatcher;)V]
+      [277] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a()V
+    Access flags: 0x2
+      = private void a()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 191, locals = 13, stack = 4):
+      [0] aload_0 v0
+      [1] getfield #45
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.b Ljava/lang/Double;]
+      [4] invokevirtual #80
+        + Methodref [java/lang/Double.doubleValue ()D]
+      [7] ldc2_w #38
+        + Double [0.1]
+      [10] dmul
+      [11] dstore_1 v1
+      [12] dload_1 v1
+      [13] aload_0 v0
+      [14] getfield #45
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.b Ljava/lang/Double;]
+      [17] invokevirtual #80
+        + Methodref [java/lang/Double.doubleValue ()D]
+      [20] dadd
+      [21] dstore_3 v3
+      [22] aload_0 v0
+      [23] getfield #45
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.b Ljava/lang/Double;]
+      [26] invokevirtual #80
+        + Methodref [java/lang/Double.doubleValue ()D]
+      [29] ldc2_w #40
+        + Double [0.15]
+      [32] dmul
+      [33] dstore v5
+      [35] dload v5
+      [37] aload_0 v0
+      [38] getfield #45
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.b Ljava/lang/Double;]
+      [41] invokevirtual #80
+        + Methodref [java/lang/Double.doubleValue ()D]
+      [44] dadd
+      [45] dstore v7
+      [47] aload_0 v0
+      [48] getfield #45
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.b Ljava/lang/Double;]
+      [51] invokevirtual #80
+        + Methodref [java/lang/Double.doubleValue ()D]
+      [54] ldc2_w #42
+        + Double [0.2]
+      [57] dmul
+      [58] dstore v9
+      [60] dload v9
+      [62] aload_0 v0
+      [63] getfield #45
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.b Ljava/lang/Double;]
+      [66] invokevirtual #80
+        + Methodref [java/lang/Double.doubleValue ()D]
+      [69] dadd
+      [70] dstore v11
+      [72] aload_0 v0
+      [73] getfield #47
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.d Landroid/widget/EditText;]
+      [76] aload_0 v0
+      [77] dload_1 v1
+      [78] invokespecial #71
+        + Methodref [com/calculator/tipcalculator/TipCalculator.a (D)Ljava/lang/String;]
+      [81] invokevirtual #67
+        + Methodref [android/widget/EditText.setText (Ljava/lang/CharSequence;)V]
+      [84] aload_0 v0
+      [85] getfield #48
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.e Landroid/widget/EditText;]
+      [88] aload_0 v0
+      [89] dload v5
+      [91] invokespecial #71
+        + Methodref [com/calculator/tipcalculator/TipCalculator.a (D)Ljava/lang/String;]
+      [94] invokevirtual #67
+        + Methodref [android/widget/EditText.setText (Ljava/lang/CharSequence;)V]
+      [97] aload_0 v0
+      [98] getfield #49
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.f Landroid/widget/EditText;]
+      [101] aload_0 v0
+      [102] dload v9
+      [104] invokespecial #71
+        + Methodref [com/calculator/tipcalculator/TipCalculator.a (D)Ljava/lang/String;]
+      [107] invokevirtual #67
+        + Methodref [android/widget/EditText.setText (Ljava/lang/CharSequence;)V]
+      [110] aload_0 v0
+      [111] getfield #50
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.g Landroid/widget/EditText;]
+      [114] aload_0 v0
+      [115] dload_3 v3
+      [116] invokespecial #71
+        + Methodref [com/calculator/tipcalculator/TipCalculator.a (D)Ljava/lang/String;]
+      [119] invokevirtual #67
+        + Methodref [android/widget/EditText.setText (Ljava/lang/CharSequence;)V]
+      [122] aload_0 v0
+      [123] getfield #51
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.h Landroid/widget/EditText;]
+      [126] aload_0 v0
+      [127] dload v7
+      [129] invokespecial #71
+        + Methodref [com/calculator/tipcalculator/TipCalculator.a (D)Ljava/lang/String;]
+      [132] invokevirtual #67
+        + Methodref [android/widget/EditText.setText (Ljava/lang/CharSequence;)V]
+      [135] aload_0 v0
+      [136] getfield #52
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.i Landroid/widget/EditText;]
+      [139] aload_0 v0
+      [140] dload v11
+      [142] invokespecial #71
+        + Methodref [com/calculator/tipcalculator/TipCalculator.a (D)Ljava/lang/String;]
+      [145] invokevirtual #67
+        + Methodref [android/widget/EditText.setText (Ljava/lang/CharSequence;)V]
+      [148] aload_0 v0
+      [149] getfield #53
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.j Landroid/widget/EditText;]
+      [152] aload_0 v0
+      [153] dload_3 v3
+      [154] invokespecial #73
+        + Methodref [com/calculator/tipcalculator/TipCalculator.b (D)Ljava/lang/String;]
+      [157] invokevirtual #67
+        + Methodref [android/widget/EditText.setText (Ljava/lang/CharSequence;)V]
+      [160] aload_0 v0
+      [161] getfield #54
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.k Landroid/widget/EditText;]
+      [164] aload_0 v0
+      [165] dload v7
+      [167] invokespecial #73
+        + Methodref [com/calculator/tipcalculator/TipCalculator.b (D)Ljava/lang/String;]
+      [170] invokevirtual #67
+        + Methodref [android/widget/EditText.setText (Ljava/lang/CharSequence;)V]
+      [173] aload_0 v0
+      [174] getfield #55
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.l Landroid/widget/EditText;]
+      [177] aload_0 v0
+      [178] dload v11
+      [180] invokespecial #73
+        + Methodref [com/calculator/tipcalculator/TipCalculator.b (D)Ljava/lang/String;]
+      [183] invokevirtual #67
+        + Methodref [android/widget/EditText.setText (Ljava/lang/CharSequence;)V]
+      [186] aload_0 v0
+      [187] invokespecial #74
+        + Methodref [com/calculator/tipcalculator/TipCalculator.c ()V]
+      [190] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(D)Ljava/lang/String;
+    Access flags: 0x2
+      = private java.lang.String a(double)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 17, locals = 3, stack = 6):
+      [0] ldc #20
+        + String [%.2f]
+      [2] iconst_1
+      [3] anewarray #33
+        + Class [java/lang/Object]
+      [6] dup
+      [7] iconst_0
+      [8] dload_1 v1
+      [9] invokestatic #81
+        + Methodref [java/lang/Double.valueOf (D)Ljava/lang/Double;]
+      [12] aastore
+      [13] invokestatic #84
+        + Methodref [java/lang/String.format (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
+      [16] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       b(D)Ljava/lang/String;
+    Access flags: 0x2
+      = private java.lang.String b(double)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 22, locals = 5, stack = 6):
+      [0] dload_1 v1
+      [1] invokestatic #83
+        + Methodref [java/lang/Math.round (D)J]
+      [4] lstore_3 v3
+      [5] ldc #21
+        + String [%d]
+      [7] iconst_1
+      [8] anewarray #33
+        + Class [java/lang/Object]
+      [11] dup
+      [12] iconst_0
+      [13] lload_3 v3
+      [14] invokestatic #82
+        + Methodref [java/lang/Long.valueOf (J)Ljava/lang/Long;]
+      [17] aastore
+      [18] invokestatic #84
+        + Methodref [java/lang/String.format (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
+      [21] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       b()V
+    Access flags: 0x2
+      = private void b()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 46, locals = 1, stack = 4):
+      [0] aload_0 v0
+      [1] getfield #57
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.n Landroid/widget/TextView;]
+      [4] new #35
+        + Class [java/lang/StringBuilder]
+      [7] dup
+      [8] invokespecial #85
+        + Methodref [java/lang/StringBuilder.<init> ()V]
+      [11] aload_0 v0
+      [12] getfield #58
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.o I]
+      [15] invokevirtual #86
+        + Methodref [java/lang/StringBuilder.append (I)Ljava/lang/StringBuilder;]
+      [18] ldc #19
+        + String [%]
+      [20] invokevirtual #87
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [23] invokevirtual #88
+        + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+      [26] invokevirtual #69
+        + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
+      [29] aload_0 v0
+      [30] getfield #45
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.b Ljava/lang/Double;]
+      [33] invokevirtual #80
+        + Methodref [java/lang/Double.doubleValue ()D]
+      [36] dconst_0
+      [37] dcmpl
+      [38] ifle +7 (target=45)
+      [41] aload_0 v0
+      [42] invokespecial #74
+        + Methodref [com/calculator/tipcalculator/TipCalculator.c ()V]
+      [45] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 1):
+        - [45] Var: ..., Stack: (empty)
+  + Method:       c()V
+    Access flags: 0x2
+      = private void c()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 65, locals = 5, stack = 4):
+      [0] aload_0 v0
+      [1] getfield #45
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.b Ljava/lang/Double;]
+      [4] invokevirtual #80
+        + Methodref [java/lang/Double.doubleValue ()D]
+      [7] aload_0 v0
+      [8] getfield #58
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.o I]
+      [11] i2d
+      [12] dmul
+      [13] ldc2_w #36
+        + Double [0.01]
+      [16] dmul
+      [17] dstore_1 v1
+      [18] dload_1 v1
+      [19] aload_0 v0
+      [20] getfield #45
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.b Ljava/lang/Double;]
+      [23] invokevirtual #80
+        + Methodref [java/lang/Double.doubleValue ()D]
+      [26] dadd
+      [27] dstore_3 v3
+      [28] aload_0 v0
+      [29] getfield #59
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.p Landroid/widget/EditText;]
+      [32] aload_0 v0
+      [33] dload_1 v1
+      [34] invokespecial #71
+        + Methodref [com/calculator/tipcalculator/TipCalculator.a (D)Ljava/lang/String;]
+      [37] invokevirtual #67
+        + Methodref [android/widget/EditText.setText (Ljava/lang/CharSequence;)V]
+      [40] aload_0 v0
+      [41] getfield #60
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.q Landroid/widget/EditText;]
+      [44] aload_0 v0
+      [45] dload_3 v3
+      [46] invokespecial #71
+        + Methodref [com/calculator/tipcalculator/TipCalculator.a (D)Ljava/lang/String;]
+      [49] invokevirtual #67
+        + Methodref [android/widget/EditText.setText (Ljava/lang/CharSequence;)V]
+      [52] aload_0 v0
+      [53] getfield #61
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.r Landroid/widget/EditText;]
+      [56] aload_0 v0
+      [57] dload_3 v3
+      [58] invokespecial #73
+        + Methodref [com/calculator/tipcalculator/TipCalculator.b (D)Ljava/lang/String;]
+      [61] invokevirtual #67
+        + Methodref [android/widget/EditText.setText (Ljava/lang/CharSequence;)V]
+      [64] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Lcom/calculator/tipcalculator/TipCalculator;Ljava/lang/Double;)Ljava/lang/Double;
+    Access flags: 0x1008
+      = static synthetic java.lang.Double a(com.calculator.tipcalculator.TipCalculator,java.lang.Double)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 7, locals = 2, stack = 3):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] dup_x1
+      [3] putfield #45
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.b Ljava/lang/Double;]
+      [6] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Lcom/calculator/tipcalculator/TipCalculator;)V
+    Access flags: 0x1008
+      = static synthetic void a(com.calculator.tipcalculator.TipCalculator)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] invokespecial #70
+        + Methodref [com/calculator/tipcalculator/TipCalculator.a ()V]
+      [4] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       b(Lcom/calculator/tipcalculator/TipCalculator;Ljava/lang/Double;)Ljava/lang/Double;
+    Access flags: 0x1008
+      = static synthetic java.lang.Double b(com.calculator.tipcalculator.TipCalculator,java.lang.Double)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 7, locals = 2, stack = 3):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] dup_x1
+      [3] putfield #46
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.c Ljava/lang/Double;]
+      [6] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       b(Lcom/calculator/tipcalculator/TipCalculator;)Ljava/lang/Double;
+    Access flags: 0x1008
+      = static synthetic java.lang.Double b(com.calculator.tipcalculator.TipCalculator)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #45
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.b Ljava/lang/Double;]
+      [4] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       c(Lcom/calculator/tipcalculator/TipCalculator;)Ljava/lang/Double;
+    Access flags: 0x1008
+      = static synthetic java.lang.Double c(com.calculator.tipcalculator.TipCalculator)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #46
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.c Ljava/lang/Double;]
+      [4] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Lcom/calculator/tipcalculator/TipCalculator;D)Ljava/lang/String;
+    Access flags: 0x1008
+      = static synthetic java.lang.String a(com.calculator.tipcalculator.TipCalculator,double)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 6, locals = 3, stack = 3):
+      [0] aload_0 v0
+      [1] dload_1 v1
+      [2] invokespecial #71
+        + Methodref [com/calculator/tipcalculator/TipCalculator.a (D)Ljava/lang/String;]
+      [5] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       d(Lcom/calculator/tipcalculator/TipCalculator;)Landroid/widget/EditText;
+    Access flags: 0x1008
+      = static synthetic android.widget.EditText d(com.calculator.tipcalculator.TipCalculator)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #63
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.t Landroid/widget/EditText;]
+      [4] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Lcom/calculator/tipcalculator/TipCalculator;I)I
+    Access flags: 0x1008
+      = static synthetic int a(com.calculator.tipcalculator.TipCalculator,int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 7, locals = 2, stack = 3):
+      [0] aload_0 v0
+      [1] iload_1 v1
+      [2] dup_x1
+      [3] putfield #58
+        + Fieldref [com/calculator/tipcalculator/TipCalculator.o I]
+      [6] ireturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       e(Lcom/calculator/tipcalculator/TipCalculator;)V
+    Access flags: 0x1008
+      = static synthetic void e(com.calculator.tipcalculator.TipCalculator)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] invokespecial #72
+        + Methodref [com/calculator/tipcalculator/TipCalculator.b ()V]
+      [4] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: com/calculator/tipcalculator/a
+  Superclass:    java/lang/Object
+  Major version: 0x33
+  Minor version: 0x0
+  Access flags:  0x20
+    = class com.calculator.tipcalculator.a extends java.lang.Object
+
+Interfaces (count = 1):
+  + Class [android/text/TextWatcher]
+
+Constant Pool (count = 48):
+  + Class [android/text/TextWatcher]
+  + Class [com/calculator/tipcalculator/TipCalculator]
+  + Class [com/calculator/tipcalculator/a]
+  + Class [java/lang/CharSequence]
+  + Class [java/lang/Double]
+  + Class [java/lang/NumberFormatException]
+  + Class [java/lang/Object]
+  + Fieldref [com/calculator/tipcalculator/a.a Lcom/calculator/tipcalculator/TipCalculator;]
+  + Methodref [com/calculator/tipcalculator/TipCalculator.a (Lcom/calculator/tipcalculator/TipCalculator;)V]
+  + Methodref [com/calculator/tipcalculator/TipCalculator.a (Lcom/calculator/tipcalculator/TipCalculator;Ljava/lang/Double;)Ljava/lang/Double;]
+  + Methodref [java/lang/Double.parseDouble (Ljava/lang/String;)D]
+  + Methodref [java/lang/Double.valueOf (D)Ljava/lang/Double;]
+  + Methodref [java/lang/Object.<init> ()V]
+  + InterfaceMethodref [java/lang/CharSequence.toString ()Ljava/lang/String;]
+  + NameAndType [<init> ()V]
+  + NameAndType [a (Lcom/calculator/tipcalculator/TipCalculator;)V]
+  + NameAndType [a (Lcom/calculator/tipcalculator/TipCalculator;Ljava/lang/Double;)Ljava/lang/Double;]
+  + NameAndType [a Lcom/calculator/tipcalculator/TipCalculator;]
+  + NameAndType [parseDouble (Ljava/lang/String;)D]
+  + NameAndType [toString ()Ljava/lang/String;]
+  + NameAndType [valueOf (D)Ljava/lang/Double;]
+  + Utf8 [()Ljava/lang/String;]
+  + Utf8 [()V]
+  + Utf8 [(D)Ljava/lang/Double;]
+  + Utf8 [(Landroid/text/Editable;)V]
+  + Utf8 [(Lcom/calculator/tipcalculator/TipCalculator;)V]
+  + Utf8 [(Lcom/calculator/tipcalculator/TipCalculator;Ljava/lang/Double;)Ljava/lang/Double;]
+  + Utf8 [(Ljava/lang/CharSequence;III)V]
+  + Utf8 [(Ljava/lang/String;)D]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [Lcom/calculator/tipcalculator/TipCalculator;]
+  + Utf8 [StackMapTable]
+  + Utf8 [a]
+  + Utf8 [afterTextChanged]
+  + Utf8 [android/text/TextWatcher]
+  + Utf8 [beforeTextChanged]
+  + Utf8 [com/calculator/tipcalculator/TipCalculator]
+  + Utf8 [com/calculator/tipcalculator/a]
+  + Utf8 [java/lang/CharSequence]
+  + Utf8 [java/lang/Double]
+  + Utf8 [java/lang/NumberFormatException]
+  + Utf8 [java/lang/Object]
+  + Utf8 [onTextChanged]
+  + Utf8 [parseDouble]
+  + Utf8 [toString]
+  + Utf8 [valueOf]
+
+Fields (count = 1):
+  + Field:        a Lcom/calculator/tipcalculator/TipCalculator;
+    Access flags: 0x1010
+      = final synthetic com.calculator.tipcalculator.TipCalculator a
+
+Methods (count = 4):
+  - Method:       <init>(Lcom/calculator/tipcalculator/TipCalculator;)V
+    Access flags: 0x0
+      = a(com.calculator.tipcalculator.TipCalculator)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 10, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] putfield #8
+        + Fieldref [com/calculator/tipcalculator/a.a Lcom/calculator/tipcalculator/TipCalculator;]
+      [5] aload_0 v0
+      [6] invokespecial #13
+        + Methodref [java/lang/Object.<init> ()V]
+      [9] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       beforeTextChanged(Ljava/lang/CharSequence;III)V
+    Access flags: 0x1
+      = public void beforeTextChanged(java.lang.CharSequence,int,int,int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 1, locals = 5, stack = 0):
+      [0] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onTextChanged(Ljava/lang/CharSequence;III)V
+    Access flags: 0x1
+      = public void onTextChanged(java.lang.CharSequence,int,int,int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 45, locals = 6, stack = 3):
+      [0] aload_0 v0
+      [1] getfield #8
+        + Fieldref [com/calculator/tipcalculator/a.a Lcom/calculator/tipcalculator/TipCalculator;]
+      [4] aload_1 v1
+      [5] invokeinterface #14
+        + InterfaceMethodref [java/lang/CharSequence.toString ()Ljava/lang/String;]
+      [10] invokestatic #11
+        + Methodref [java/lang/Double.parseDouble (Ljava/lang/String;)D]
+      [13] invokestatic #12
+        + Methodref [java/lang/Double.valueOf (D)Ljava/lang/Double;]
+      [16] invokestatic #10
+        + Methodref [com/calculator/tipcalculator/TipCalculator.a (Lcom/calculator/tipcalculator/TipCalculator;Ljava/lang/Double;)Ljava/lang/Double;]
+      [19] pop
+      [20] goto +17 (target=37)
+      [23] astore v5
+      [25] aload_0 v0
+      [26] getfield #8
+        + Fieldref [com/calculator/tipcalculator/a.a Lcom/calculator/tipcalculator/TipCalculator;]
+      [29] dconst_0
+      [30] invokestatic #12
+        + Methodref [java/lang/Double.valueOf (D)Ljava/lang/Double;]
+      [33] invokestatic #10
+        + Methodref [com/calculator/tipcalculator/TipCalculator.a (Lcom/calculator/tipcalculator/TipCalculator;Ljava/lang/Double;)Ljava/lang/Double;]
+      [36] pop
+      [37] aload_0 v0
+      [38] getfield #8
+        + Fieldref [com/calculator/tipcalculator/a.a Lcom/calculator/tipcalculator/TipCalculator;]
+      [41] invokestatic #9
+        + Methodref [com/calculator/tipcalculator/TipCalculator.a (Lcom/calculator/tipcalculator/TipCalculator;)V]
+      [44] return
+      Code attribute exceptions (count = 1):
+      - ExceptionInfo (0 -> 20: 23):
+      + Class [java/lang/NumberFormatException]
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 2):
+        - [23] Var: ..., Stack: [a:java/lang/NumberFormatException]
+        - [37] Var: ..., Stack: (empty)
+  + Method:       afterTextChanged(Landroid/text/Editable;)V
+    Access flags: 0x1
+      = public void afterTextChanged(android.text.Editable)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 1, locals = 2, stack = 0):
+      [0] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: com/calculator/tipcalculator/b
+  Superclass:    java/lang/Object
+  Major version: 0x33
+  Minor version: 0x0
+  Access flags:  0x20
+    = class com.calculator.tipcalculator.b extends java.lang.Object
+
+Interfaces (count = 1):
+  + Class [android/text/TextWatcher]
+
+Constant Pool (count = 74):
+  + String []
+  + Class [android/text/TextWatcher]
+  + Class [android/widget/EditText]
+  + Class [com/calculator/tipcalculator/TipCalculator]
+  + Class [com/calculator/tipcalculator/b]
+  + Class [java/lang/CharSequence]
+  + Class [java/lang/Double]
+  + Class [java/lang/NumberFormatException]
+  + Class [java/lang/Object]
+  + Double [100.0]
+  + Fieldref [com/calculator/tipcalculator/b.a Lcom/calculator/tipcalculator/TipCalculator;]
+  + Methodref [android/widget/EditText.setText (Ljava/lang/CharSequence;)V]
+  + Methodref [com/calculator/tipcalculator/TipCalculator.a (Lcom/calculator/tipcalculator/TipCalculator;D)Ljava/lang/String;]
+  + Methodref [com/calculator/tipcalculator/TipCalculator.b (Lcom/calculator/tipcalculator/TipCalculator;)Ljava/lang/Double;]
+  + Methodref [com/calculator/tipcalculator/TipCalculator.b (Lcom/calculator/tipcalculator/TipCalculator;Ljava/lang/Double;)Ljava/lang/Double;]
+  + Methodref [com/calculator/tipcalculator/TipCalculator.c (Lcom/calculator/tipcalculator/TipCalculator;)Ljava/lang/Double;]
+  + Methodref [com/calculator/tipcalculator/TipCalculator.d (Lcom/calculator/tipcalculator/TipCalculator;)Landroid/widget/EditText;]
+  + Methodref [java/lang/Double.doubleValue ()D]
+  + Methodref [java/lang/Double.parseDouble (Ljava/lang/String;)D]
+  + Methodref [java/lang/Double.valueOf (D)Ljava/lang/Double;]
+  + Methodref [java/lang/Object.<init> ()V]
+  + InterfaceMethodref [java/lang/CharSequence.toString ()Ljava/lang/String;]
+  + NameAndType [<init> ()V]
+  + NameAndType [a (Lcom/calculator/tipcalculator/TipCalculator;D)Ljava/lang/String;]
+  + NameAndType [a Lcom/calculator/tipcalculator/TipCalculator;]
+  + NameAndType [b (Lcom/calculator/tipcalculator/TipCalculator;)Ljava/lang/Double;]
+  + NameAndType [b (Lcom/calculator/tipcalculator/TipCalculator;Ljava/lang/Double;)Ljava/lang/Double;]
+  + NameAndType [c (Lcom/calculator/tipcalculator/TipCalculator;)Ljava/lang/Double;]
+  + NameAndType [d (Lcom/calculator/tipcalculator/TipCalculator;)Landroid/widget/EditText;]
+  + NameAndType [doubleValue ()D]
+  + NameAndType [parseDouble (Ljava/lang/String;)D]
+  + NameAndType [setText (Ljava/lang/CharSequence;)V]
+  + NameAndType [toString ()Ljava/lang/String;]
+  + NameAndType [valueOf (D)Ljava/lang/Double;]
+  + Utf8 []
+  + Utf8 [()D]
+  + Utf8 [()Ljava/lang/String;]
+  + Utf8 [()V]
+  + Utf8 [(D)Ljava/lang/Double;]
+  + Utf8 [(Landroid/text/Editable;)V]
+  + Utf8 [(Lcom/calculator/tipcalculator/TipCalculator;)Landroid/widget/EditText;]
+  + Utf8 [(Lcom/calculator/tipcalculator/TipCalculator;)Ljava/lang/Double;]
+  + Utf8 [(Lcom/calculator/tipcalculator/TipCalculator;)V]
+  + Utf8 [(Lcom/calculator/tipcalculator/TipCalculator;D)Ljava/lang/String;]
+  + Utf8 [(Lcom/calculator/tipcalculator/TipCalculator;Ljava/lang/Double;)Ljava/lang/Double;]
+  + Utf8 [(Ljava/lang/CharSequence;)V]
+  + Utf8 [(Ljava/lang/CharSequence;III)V]
+  + Utf8 [(Ljava/lang/String;)D]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [Lcom/calculator/tipcalculator/TipCalculator;]
+  + Utf8 [StackMapTable]
+  + Utf8 [a]
+  + Utf8 [afterTextChanged]
+  + Utf8 [android/text/TextWatcher]
+  + Utf8 [android/widget/EditText]
+  + Utf8 [b]
+  + Utf8 [beforeTextChanged]
+  + Utf8 [c]
+  + Utf8 [com/calculator/tipcalculator/TipCalculator]
+  + Utf8 [com/calculator/tipcalculator/b]
+  + Utf8 [d]
+  + Utf8 [doubleValue]
+  + Utf8 [java/lang/CharSequence]
+  + Utf8 [java/lang/Double]
+  + Utf8 [java/lang/NumberFormatException]
+  + Utf8 [java/lang/Object]
+  + Utf8 [onTextChanged]
+  + Utf8 [parseDouble]
+  + Utf8 [setText]
+  + Utf8 [toString]
+  + Utf8 [valueOf]
+
+Fields (count = 1):
+  + Field:        a Lcom/calculator/tipcalculator/TipCalculator;
+    Access flags: 0x1010
+      = final synthetic com.calculator.tipcalculator.TipCalculator a
+
+Methods (count = 4):
+  - Method:       <init>(Lcom/calculator/tipcalculator/TipCalculator;)V
+    Access flags: 0x0
+      = b(com.calculator.tipcalculator.TipCalculator)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 10, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] putfield #12
+        + Fieldref [com/calculator/tipcalculator/b.a Lcom/calculator/tipcalculator/TipCalculator;]
+      [5] aload_0 v0
+      [6] invokespecial #22
+        + Methodref [java/lang/Object.<init> ()V]
+      [9] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       beforeTextChanged(Ljava/lang/CharSequence;III)V
+    Access flags: 0x1
+      = public void beforeTextChanged(java.lang.CharSequence,int,int,int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 1, locals = 5, stack = 0):
+      [0] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onTextChanged(Ljava/lang/CharSequence;III)V
+    Access flags: 0x1
+      = public void onTextChanged(java.lang.CharSequence,int,int,int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 134, locals = 7, stack = 4):
+      [0] aload_0 v0
+      [1] getfield #12
+        + Fieldref [com/calculator/tipcalculator/b.a Lcom/calculator/tipcalculator/TipCalculator;]
+      [4] aload_1 v1
+      [5] invokeinterface #23
+        + InterfaceMethodref [java/lang/CharSequence.toString ()Ljava/lang/String;]
+      [10] invokestatic #20
+        + Methodref [java/lang/Double.parseDouble (Ljava/lang/String;)D]
+      [13] invokestatic #21
+        + Methodref [java/lang/Double.valueOf (D)Ljava/lang/Double;]
+      [16] invokestatic #16
+        + Methodref [com/calculator/tipcalculator/TipCalculator.b (Lcom/calculator/tipcalculator/TipCalculator;Ljava/lang/Double;)Ljava/lang/Double;]
+      [19] pop
+      [20] aload_0 v0
+      [21] getfield #12
+        + Fieldref [com/calculator/tipcalculator/b.a Lcom/calculator/tipcalculator/TipCalculator;]
+      [24] invokestatic #15
+        + Methodref [com/calculator/tipcalculator/TipCalculator.b (Lcom/calculator/tipcalculator/TipCalculator;)Ljava/lang/Double;]
+      [27] invokevirtual #19
+        + Methodref [java/lang/Double.doubleValue ()D]
+      [30] aload_0 v0
+      [31] getfield #12
+        + Fieldref [com/calculator/tipcalculator/b.a Lcom/calculator/tipcalculator/TipCalculator;]
+      [34] invokestatic #17
+        + Methodref [com/calculator/tipcalculator/TipCalculator.c (Lcom/calculator/tipcalculator/TipCalculator;)Ljava/lang/Double;]
+      [37] invokevirtual #19
+        + Methodref [java/lang/Double.doubleValue ()D]
+      [40] dcmpg
+      [41] ifge +63 (target=104)
+      [44] aload_0 v0
+      [45] getfield #12
+        + Fieldref [com/calculator/tipcalculator/b.a Lcom/calculator/tipcalculator/TipCalculator;]
+      [48] invokestatic #17
+        + Methodref [com/calculator/tipcalculator/TipCalculator.c (Lcom/calculator/tipcalculator/TipCalculator;)Ljava/lang/Double;]
+      [51] invokevirtual #19
+        + Methodref [java/lang/Double.doubleValue ()D]
+      [54] aload_0 v0
+      [55] getfield #12
+        + Fieldref [com/calculator/tipcalculator/b.a Lcom/calculator/tipcalculator/TipCalculator;]
+      [58] invokestatic #15
+        + Methodref [com/calculator/tipcalculator/TipCalculator.b (Lcom/calculator/tipcalculator/TipCalculator;)Ljava/lang/Double;]
+      [61] invokevirtual #19
+        + Methodref [java/lang/Double.doubleValue ()D]
+      [64] dsub
+      [65] ldc2_w #10
+        + Double [100.0]
+      [68] dmul
+      [69] aload_0 v0
+      [70] getfield #12
+        + Fieldref [com/calculator/tipcalculator/b.a Lcom/calculator/tipcalculator/TipCalculator;]
+      [73] invokestatic #15
+        + Methodref [com/calculator/tipcalculator/TipCalculator.b (Lcom/calculator/tipcalculator/TipCalculator;)Ljava/lang/Double;]
+      [76] invokevirtual #19
+        + Methodref [java/lang/Double.doubleValue ()D]
+      [79] ddiv
+      [80] dstore v5
+      [82] aload_0 v0
+      [83] getfield #12
+        + Fieldref [com/calculator/tipcalculator/b.a Lcom/calculator/tipcalculator/TipCalculator;]
+      [86] invokestatic #18
+        + Methodref [com/calculator/tipcalculator/TipCalculator.d (Lcom/calculator/tipcalculator/TipCalculator;)Landroid/widget/EditText;]
+      [89] aload_0 v0
+      [90] getfield #12
+        + Fieldref [com/calculator/tipcalculator/b.a Lcom/calculator/tipcalculator/TipCalculator;]
+      [93] dload v5
+      [95] invokestatic #14
+        + Methodref [com/calculator/tipcalculator/TipCalculator.a (Lcom/calculator/tipcalculator/TipCalculator;D)Ljava/lang/String;]
+      [98] invokevirtual #13
+        + Methodref [android/widget/EditText.setText (Ljava/lang/CharSequence;)V]
+      [101] goto +15 (target=116)
+      [104] aload_0 v0
+      [105] getfield #12
+        + Fieldref [com/calculator/tipcalculator/b.a Lcom/calculator/tipcalculator/TipCalculator;]
+      [108] invokestatic #18
+        + Methodref [com/calculator/tipcalculator/TipCalculator.d (Lcom/calculator/tipcalculator/TipCalculator;)Landroid/widget/EditText;]
+      [111] ldc #1
+        + String []
+      [113] invokevirtual #13
+        + Methodref [android/widget/EditText.setText (Ljava/lang/CharSequence;)V]
+      [116] goto +17 (target=133)
+      [119] astore v5
+      [121] aload_0 v0
+      [122] getfield #12
+        + Fieldref [com/calculator/tipcalculator/b.a Lcom/calculator/tipcalculator/TipCalculator;]
+      [125] dconst_0
+      [126] invokestatic #21
+        + Methodref [java/lang/Double.valueOf (D)Ljava/lang/Double;]
+      [129] invokestatic #16
+        + Methodref [com/calculator/tipcalculator/TipCalculator.b (Lcom/calculator/tipcalculator/TipCalculator;Ljava/lang/Double;)Ljava/lang/Double;]
+      [132] pop
+      [133] return
+      Code attribute exceptions (count = 1):
+      - ExceptionInfo (0 -> 116: 119):
+      + Class [java/lang/NumberFormatException]
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 4):
+        - [104] Var: ..., Stack: (empty)
+        - [116] Var: ..., Stack: (empty)
+        - [119] Var: ..., Stack: [a:java/lang/NumberFormatException]
+        - [133] Var: ..., Stack: (empty)
+  + Method:       afterTextChanged(Landroid/text/Editable;)V
+    Access flags: 0x1
+      = public void afterTextChanged(android.text.Editable)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 1, locals = 2, stack = 0):
+      [0] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: com/calculator/tipcalculator/c
+  Superclass:    java/lang/Object
+  Major version: 0x33
+  Minor version: 0x0
+  Access flags:  0x20
+    = class com.calculator.tipcalculator.c extends java.lang.Object
+
+Interfaces (count = 1):
+  + Class [android/widget/SeekBar$OnSeekBarChangeListener]
+
+Constant Pool (count = 36):
+  + Class [android/widget/SeekBar]
+  + Class [android/widget/SeekBar$OnSeekBarChangeListener]
+  + Class [com/calculator/tipcalculator/TipCalculator]
+  + Class [com/calculator/tipcalculator/c]
+  + Class [java/lang/Object]
+  + Fieldref [com/calculator/tipcalculator/c.a Lcom/calculator/tipcalculator/TipCalculator;]
+  + Methodref [android/widget/SeekBar.getProgress ()I]
+  + Methodref [com/calculator/tipcalculator/TipCalculator.a (Lcom/calculator/tipcalculator/TipCalculator;I)I]
+  + Methodref [com/calculator/tipcalculator/TipCalculator.e (Lcom/calculator/tipcalculator/TipCalculator;)V]
+  + Methodref [java/lang/Object.<init> ()V]
+  + NameAndType [<init> ()V]
+  + NameAndType [a (Lcom/calculator/tipcalculator/TipCalculator;I)I]
+  + NameAndType [a Lcom/calculator/tipcalculator/TipCalculator;]
+  + NameAndType [e (Lcom/calculator/tipcalculator/TipCalculator;)V]
+  + NameAndType [getProgress ()I]
+  + Utf8 [()I]
+  + Utf8 [()V]
+  + Utf8 [(Landroid/widget/SeekBar;)V]
+  + Utf8 [(Landroid/widget/SeekBar;IZ)V]
+  + Utf8 [(Lcom/calculator/tipcalculator/TipCalculator;)V]
+  + Utf8 [(Lcom/calculator/tipcalculator/TipCalculator;I)I]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [Lcom/calculator/tipcalculator/TipCalculator;]
+  + Utf8 [a]
+  + Utf8 [android/widget/SeekBar]
+  + Utf8 [android/widget/SeekBar$OnSeekBarChangeListener]
+  + Utf8 [com/calculator/tipcalculator/TipCalculator]
+  + Utf8 [com/calculator/tipcalculator/c]
+  + Utf8 [e]
+  + Utf8 [getProgress]
+  + Utf8 [java/lang/Object]
+  + Utf8 [onProgressChanged]
+  + Utf8 [onStartTrackingTouch]
+  + Utf8 [onStopTrackingTouch]
+
+Fields (count = 1):
+  + Field:        a Lcom/calculator/tipcalculator/TipCalculator;
+    Access flags: 0x1010
+      = final synthetic com.calculator.tipcalculator.TipCalculator a
+
+Methods (count = 4):
+  - Method:       <init>(Lcom/calculator/tipcalculator/TipCalculator;)V
+    Access flags: 0x0
+      = c(com.calculator.tipcalculator.TipCalculator)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 10, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] putfield #6
+        + Fieldref [com/calculator/tipcalculator/c.a Lcom/calculator/tipcalculator/TipCalculator;]
+      [5] aload_0 v0
+      [6] invokespecial #10
+        + Methodref [java/lang/Object.<init> ()V]
+      [9] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onProgressChanged(Landroid/widget/SeekBar;IZ)V
+    Access flags: 0x1
+      = public void onProgressChanged(android.widget.SeekBar,int,boolean)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 20, locals = 4, stack = 2):
+      [0] aload_0 v0
+      [1] getfield #6
+        + Fieldref [com/calculator/tipcalculator/c.a Lcom/calculator/tipcalculator/TipCalculator;]
+      [4] aload_1 v1
+      [5] invokevirtual #7
+        + Methodref [android/widget/SeekBar.getProgress ()I]
+      [8] invokestatic #8
+        + Methodref [com/calculator/tipcalculator/TipCalculator.a (Lcom/calculator/tipcalculator/TipCalculator;I)I]
+      [11] pop
+      [12] aload_0 v0
+      [13] getfield #6
+        + Fieldref [com/calculator/tipcalculator/c.a Lcom/calculator/tipcalculator/TipCalculator;]
+      [16] invokestatic #9
+        + Methodref [com/calculator/tipcalculator/TipCalculator.e (Lcom/calculator/tipcalculator/TipCalculator;)V]
+      [19] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onStartTrackingTouch(Landroid/widget/SeekBar;)V
+    Access flags: 0x1
+      = public void onStartTrackingTouch(android.widget.SeekBar)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 1, locals = 2, stack = 0):
+      [0] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onStopTrackingTouch(Landroid/widget/SeekBar;)V
+    Access flags: 0x1
+      = public void onStopTrackingTouch(android.widget.SeekBar)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 1, locals = 2, stack = 0):
+      [0] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+
