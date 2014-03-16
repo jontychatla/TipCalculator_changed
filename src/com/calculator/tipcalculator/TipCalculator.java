@@ -1,17 +1,31 @@
 package com.calculator.tipcalculator;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.*;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.*;
+import android.widget.EditText;
+import android.widget.GridLayout;
+import android.widget.TextView;
+
+import com.calculator.tipcalculator.button.CustomButton;
 import com.calculator.tipcalculator.dao.DatabaseConnector;
 import com.calculator.tipcalculator.dao.DbQuery;
 import com.calculator.tipcalculator.model.Tip;
@@ -30,24 +44,24 @@ public class TipCalculator extends Activity {
     private static final String APP_URL = "http://market.android.com/details?id=com.calculator.tipcalculator";
     private EditText billEditText;
     private Double billTotal = 0.0;
-    private Double customAmount = 0.0;
     private Double customTip = 0.0;
-    private SeekBar seekBar;
-    private SeekBar noOfPeopleSeekBar;
-    private int noOfPeopleSliderValue = 0;
+    private int noOfPeopleValue = 0;
     private TextView noOfPeopleTextView;
     private TextView customTipTextView;
-    private int customTipSliderValue = 15;
+    private int customTipValue = 15;
 
     private EditText finalTipEditText;
     private EditText finalTotalEditText;
     private double finalTotal;
 
     private EditText perPersonAmountEditText;
-    //private EditText customAmountEditText;
-    //private EditText customTipPercentEditText;
     private GridLayout mainView;
     private MenuItem viewTipsMenuItem;
+    private CustomButton tipDownButton;
+    private CustomButton tipUpButton;
+    private CustomButton noOfPeopleDownButton;
+    private CustomButton noOfPeopleUpButton;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,26 +71,56 @@ public class TipCalculator extends Activity {
 
         billEditText = (EditText) findViewById(R.id.billEditText);
 
-        noOfPeopleSeekBar = (SeekBar) findViewById(R.id.noOfPeopleSeekBar);
         noOfPeopleTextView = (TextView) findViewById(R.id.noOfPeopleTextView);
-        seekBar = (SeekBar) findViewById(R.id.seekBar);
         customTipTextView = (TextView) findViewById(R.id.customTipTextView);
 
+        tipDownButton = (CustomButton) findViewById(R.id.tipDownButtonId);
+        tipDownButton.setOnClickListener(new UpDownButtonListener());
+        tipDownButton.setOnTouchListener(new UpDownTouchListener());
+        tipDownButton.setOnLongClickListener(new UpDownLongClickListener());
+
+
+        tipUpButton = (CustomButton) findViewById(R.id.tipUpButtonId);
+        tipUpButton.setOnClickListener(new UpDownButtonListener());
+        tipUpButton.setOnTouchListener(new UpDownTouchListener());
+        tipUpButton.setOnLongClickListener(new UpDownLongClickListener());
+
+
+        noOfPeopleDownButton = (CustomButton) findViewById(R.id.noOfPeopleDownButtonId);
+        noOfPeopleDownButton.setOnClickListener(new UpDownButtonListener());
+        noOfPeopleDownButton.setOnTouchListener(new UpDownTouchListener());
+        noOfPeopleDownButton.setOnLongClickListener(new UpDownLongClickListener());
+
+        noOfPeopleUpButton = (CustomButton) findViewById(R.id.noOfPeopleUpButtonId);
+        noOfPeopleUpButton.setOnClickListener(new UpDownButtonListener());
+        noOfPeopleUpButton.setOnTouchListener(new UpDownTouchListener());
+        noOfPeopleUpButton.setOnLongClickListener(new UpDownLongClickListener());
 
         finalTipEditText = (EditText) findViewById(R.id.finalTipEditText);
         finalTotalEditText = (EditText) findViewById(R.id.finalTotalEditText);
 
         perPersonAmountEditText = (EditText) findViewById(R.id.perPersonEditText);
 
-        //customAmountEditText = (EditText) findViewById(R.id.customAmountEditText);
-        //customTipPercentEditText = (EditText) findViewById(R.id.customTipPercentEditText);
 
         billEditText.addTextChangedListener(new BillTotalTextWatchListener());
-        seekBar.setOnSeekBarChangeListener(new MySeekChangeListener());
-        noOfPeopleSeekBar.setOnSeekBarChangeListener(new MySeekChangeListener());
-        //customAmountEditText.addTextChangedListener(new CustomAmountTextWatchListener());
 
         mainView.setOnTouchListener(new TouchListener());
+
+        billEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+                }
+            }
+        });
+
+
+        SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+        if (preferences.contains("tipPref")) {
+            customTipValue = preferences.getInt("tipPref", 15);
+        }
+        customTipTextView.setText(customTipValue + "");
         //saveTestData();
 //        try {
 //            exportDb();
@@ -91,14 +135,14 @@ public class TipCalculator extends Activity {
         }
     }
 
-    int years[] = new int[]{2012,2013,2014};
+    int years[] = new int[]{2012, 2013, 2014};
 
-    private String getRandomDate(){
+    private String getRandomDate() {
         Random random = new Random();
         int year = years[random.nextInt(2)];
-        int month = random.nextInt(12)+1;
-        int day = random.nextInt(27)+1;
-        return month +"/"+day+"/"+year;
+        int month = random.nextInt(12) + 1;
+        int day = random.nextInt(27) + 1;
+        return month + "/" + day + "/" + year;
     }
 
     private void saveTip(int i) {
@@ -106,35 +150,35 @@ public class TipCalculator extends Activity {
         Tip tip = new Tip();
         tip.withPlace("test " + i)
                 .withDate(getRandomDate())
-                .withBillAmount(Double.valueOf(14 * i*0.33))
+                .withBillAmount(Double.valueOf(14 * i * 0.33))
                 .withTipAmount(14D);
         databaseConnector.insertTip(tip);
     }
 
 
     private void exportDb() throws Exception {
-            //Open your local db as the input stream
-            String inFileName = "/data/data/com.calculator.tipcalculator/databases/UserTips";
-            File dbFile = new File(inFileName);
-            FileInputStream fis = new FileInputStream(dbFile);
+        //Open your local db as the input stream
+        String inFileName = "/data/data/com.calculator.tipcalculator/databases/UserTips";
+        File dbFile = new File(inFileName);
+        FileInputStream fis = new FileInputStream(dbFile);
 
-            String outFileName = Environment.getExternalStorageDirectory()+"/UserTips";
-            //Open the empty db as the output stream
-            OutputStream output = new FileOutputStream(outFileName);
-            //transfer bytes from the inputfile to the outputfile
-            byte[] buffer = new byte[1024];
-            int length;
-            while ((length = fis.read(buffer))>0){
-                output.write(buffer, 0, length);
-            }
-            //Close the streams
-            output.flush();
-            output.close();
-            fis.close();
+        String outFileName = Environment.getExternalStorageDirectory() + "/UserTips";
+        //Open the empty db as the output stream
+        OutputStream output = new FileOutputStream(outFileName);
+        //transfer bytes from the inputfile to the outputfile
+        byte[] buffer = new byte[1024];
+        int length;
+        while ((length = fis.read(buffer)) > 0) {
+            output.write(buffer, 0, length);
+        }
+        //Close the streams
+        output.flush();
+        output.close();
+        fis.close();
     }
 
     private void updateTipValue() {
-        customTip = (billTotal * customTipSliderValue * 0.01);
+        customTip = (billTotal * customTipValue * 0.01);
         finalTotal = customTip + billTotal;
 
         finalTipEditText.setText(getFormattedString(customTip));
@@ -146,7 +190,7 @@ public class TipCalculator extends Activity {
     }
 
     private void updateCustomTipValue() {
-        customTipTextView.setText(customTipSliderValue + "%");
+        customTipTextView.setText(customTipValue + "");
         if (billTotal > 0) {
             updateTipValue();
             calculatePerPersonTotal();
@@ -154,14 +198,14 @@ public class TipCalculator extends Activity {
     }
 
     private void updatePerPersonTotal() {
-        noOfPeopleTextView.setText(noOfPeopleSliderValue+"");
+        noOfPeopleTextView.setText(noOfPeopleValue + "");
         calculatePerPersonTotal();
     }
 
     private void calculatePerPersonTotal() {
-        if (billTotal > 0 && finalTotal > 0 && noOfPeopleSliderValue > 0) {
-            perPersonAmountEditText.setText(getFormattedString(finalTotal / noOfPeopleSliderValue));
-        }else {
+        if (billTotal > 0 && finalTotal > 0 && noOfPeopleValue > 0) {
+            perPersonAmountEditText.setText(getFormattedString(finalTotal / noOfPeopleValue));
+        } else {
             perPersonAmountEditText.setText("");
         }
     }
@@ -175,12 +219,12 @@ public class TipCalculator extends Activity {
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        viewTipsMenuItem =  menu.getItem(0);
+        viewTipsMenuItem = menu.getItem(0);
         try {
             Boolean aBoolean = new RowExist().execute((Object[]) null).get();
-            if(aBoolean) {
+            if (aBoolean) {
                 viewTipsMenuItem.setEnabled(true);
-            }else{
+            } else {
                 viewTipsMenuItem.setEnabled(false);
             }
         } catch (InterruptedException e) {
@@ -200,6 +244,9 @@ public class TipCalculator extends Activity {
             case R.id.viewTips:
                 startViewTipActivity();
                 return true;
+            case R.id.tipPreference:
+                createPreferenceDialog();
+                return true;
             case R.id.emailApp:
                 shareAppViaEmail();
                 return true;
@@ -208,6 +255,31 @@ public class TipCalculator extends Activity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void createPreferenceDialog() {
+
+        LayoutInflater layoutInflater = LayoutInflater.from(this);
+        View view = layoutInflater.inflate(R.layout.tip_pref, null);
+
+        final EditText input = (EditText) view.findViewById(R.id.prefEditTextId);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(TipCalculator.this);
+        builder.setTitle("Set Default Tip Preference");
+        builder.setView(view);
+        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (input.getText().length() > 0) {
+                    SharedPreferences preferences = TipCalculator.this.getPreferences(MODE_PRIVATE);
+                    customTipValue = Integer.parseInt(input.getText().toString());
+                    preferences.edit().putInt("tipPref", customTipValue).commit();
+                    customTipTextView.setText(input.getText().toString());
+                    updateCustomTipValue();
+                }
+            }
+        }).setNegativeButton("Cancel", null).show();
+
     }
 
     private void startSaveTipActivity() {
@@ -267,90 +339,109 @@ public class TipCalculator extends Activity {
         }
     }
 
-//    class NoOfPeopleTextWatchListener implements TextWatcher {
-//
-//        @Override
-//        public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-//
-//        }
-//
-//        @Override
-//        public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-//            try {
-//                noOfPeople = Integer.parseInt(charSequence.toString());
-//                calculatePerPersonTotal();
-//            } catch (NumberFormatException e) {
-//
-//            }
-//        }
-//
-//        @Override
-//        public void afterTextChanged(Editable editable) {
-//
-//        }
-//    }
-
-//    class CustomAmountTextWatchListener implements TextWatcher {
-//
-//        @Override
-//        public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-//
-//        }
-//
-//        @Override
-//        public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-//            try {
-//                customAmount = Double.parseDouble(charSequence.toString());
-//                if (billTotal < customAmount) {
-//                    double customTipPercentValue = (customAmount - billTotal) * 100 / billTotal;
-//                    customTipPercentEditText.setText(getFormattedString(customTipPercentValue));
-//                } else {
-//                    customTipPercentEditText.setText("");
-//                }
-//            } catch (NumberFormatException e) {
-//                customAmount = 0.0;
-//            }
-//        }
-//
-//        @Override
-//        public void afterTextChanged(Editable editable) {
-//
-//        }
-//    }
-
-    class MySeekChangeListener implements SeekBar.OnSeekBarChangeListener {
+    class UpDownButtonListener implements View.OnClickListener {
 
         @Override
-        public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-            switch (seekBar.getId()) {
-                case R.id.seekBar:
-                    customTipSliderValue = seekBar.getProgress();
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.tipDownButtonId:
+                    customTipValue -= 1;
                     updateCustomTipValue();
                     break;
-                case R.id.noOfPeopleSeekBar:
-                    noOfPeopleSliderValue = seekBar.getProgress();
+                case R.id.tipUpButtonId:
+                    customTipValue += 1;
+                    updateCustomTipValue();
+                    break;
+                case R.id.noOfPeopleDownButtonId:
+                    noOfPeopleValue -= 1;
                     updatePerPersonTotal();
+                    break;
+                case R.id.noOfPeopleUpButtonId:
+                    noOfPeopleValue += 1;
+                    updatePerPersonTotal();
+                    break;
             }
-
-        }
-
-        @Override
-        public void onStartTrackingTouch(SeekBar seekBar) {
-
-        }
-
-        @Override
-        public void onStopTrackingTouch(SeekBar seekBar) {
-
         }
     }
+
+    private Handler repeatUpdateHandler = new Handler();
+
+    private boolean tipAutoIncrement = false;
+    private boolean tipAutoDecrement = false;
+    private boolean peopleAutoIncrement = false;
+    private boolean peopleAutoDecrement = false;
+    private long REP_DELAY = 100;
+
+    class RepeatUpdater implements Runnable {
+        public void run() {
+            if (tipAutoIncrement) {
+                customTipValue += 1;
+                updateCustomTipValue();
+                repeatUpdateHandler.postDelayed(new RepeatUpdater(), REP_DELAY);
+            } else if (tipAutoDecrement) {
+                customTipValue -= 1;
+                updateCustomTipValue();
+                repeatUpdateHandler.postDelayed(new RepeatUpdater(), REP_DELAY);
+            } else if (peopleAutoIncrement) {
+                noOfPeopleValue += 1;
+                updatePerPersonTotal();
+                repeatUpdateHandler.postDelayed(new RepeatUpdater(), REP_DELAY);
+            } else if (peopleAutoDecrement) {
+                noOfPeopleValue -= 1;
+                updatePerPersonTotal();
+                repeatUpdateHandler.postDelayed(new RepeatUpdater(), REP_DELAY);
+            }
+        }
+    }
+
+    class UpDownLongClickListener implements View.OnLongClickListener {
+
+        @Override
+        public boolean onLongClick(View v) {
+            switch (v.getId()) {
+                case R.id.tipDownButtonId:
+                    tipAutoDecrement = true;
+                    break;
+                case R.id.tipUpButtonId:
+                    tipAutoIncrement = true;
+                    break;
+                case R.id.noOfPeopleDownButtonId:
+                    peopleAutoDecrement = true;
+                    break;
+                case R.id.noOfPeopleUpButtonId:
+                    peopleAutoIncrement = true;
+                    break;
+            }
+            repeatUpdateHandler.post(new RepeatUpdater());
+            return false;
+        }
+    }
+
+    class UpDownTouchListener implements View.OnTouchListener {
+        public boolean onTouch(View v, MotionEvent event) {
+            hideKeyboard();
+            if ((event.getAction() == MotionEvent.ACTION_UP || event.getAction() == MotionEvent.ACTION_CANCEL)
+                    && (tipAutoIncrement || tipAutoDecrement || peopleAutoIncrement || peopleAutoDecrement)) {
+                tipAutoIncrement = false;
+                tipAutoDecrement = false;
+                peopleAutoIncrement = false;
+                peopleAutoDecrement = false;
+            }
+            return false;
+        }
+    }
+
+    private void hideKeyboard() {
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+    }
+
 
     class TouchListener implements View.OnTouchListener {
 
         @Override
         public boolean onTouch(View view, MotionEvent motionEvent) {
-            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+            hideKeyboard();
             return false;
         }
     }

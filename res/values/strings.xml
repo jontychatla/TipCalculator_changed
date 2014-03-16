@@ -15,8 +15,9 @@
 
 
     <!--Menu options-->
-    <string name="saveTip">Save Tip</string>
     <string name="viewTip">View Tips</string>
+    <string name="tipPreference">Tip% Preference</string>
+    <string name="saveTip">Save Tip</string>
     <string name="shareApp">Share</string>
     <string name="rateApp">Rate App</string>
 

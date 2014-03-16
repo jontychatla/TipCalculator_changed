@@ -2,6 +2,7 @@
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/viewTips"  android:title="@string/viewTip"/>
+    <item android:id="@+id/tipPreference"  android:title="@string/tipPreference"/>
     <item android:id="@+id/saveTip"  android:title="@string/saveTip"/>
     <item android:id="@+id/emailApp" android:icon="@android:drawable/ic_menu_share" android:title="@string/shareApp"/>
     <item android:id="@+id/rateApp"  android:title="@string/rateApp"/>

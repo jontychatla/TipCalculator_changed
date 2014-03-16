@@ -14,13 +14,11 @@ public class TipFragmentActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tip_view);
-        if (getFragmentManager().findFragmentById(R.id.fragment_profile) == null) {
             getFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fragment_profile, TipDetailFragment.getInstance((Tip) getIntent().getSerializableExtra("test")))
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                     .commit();
-        }
 
 //
 //        Fragment fragment = getFragmentManager().findFragmentByTag("list");

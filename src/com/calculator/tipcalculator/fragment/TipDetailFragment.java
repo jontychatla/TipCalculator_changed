@@ -31,6 +31,11 @@ public class TipDetailFragment extends Fragment {
     private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     private static SimpleDateFormat osdf = new SimpleDateFormat("MMM, dd yyyy");
 
+
+    public TipDetailFragment(){
+
+    }
+
     public TipDetailFragment(Tip data) {
         this.data = data;
 
@@ -51,6 +56,9 @@ public class TipDetailFragment extends Fragment {
     }
 
     private void bindViewData() {
+        if(null == data) {
+            return;
+        }
         placeTextView.setText(data.getPlace());
         try {
             Date d = sdf.parse(data.getDate());
