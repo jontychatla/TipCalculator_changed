@@ -23,12 +23,18 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.GridLayout;
+import android.widget.LinearLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.calculator.tipcalculator.button.CustomButton;
 import com.calculator.tipcalculator.dao.DatabaseConnector;
 import com.calculator.tipcalculator.dao.DbQuery;
 import com.calculator.tipcalculator.model.Tip;
+import com.echo.holographlibrary.Line;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -61,7 +67,16 @@ public class TipCalculator extends Activity {
     private CustomButton tipUpButton;
     private CustomButton noOfPeopleDownButton;
     private CustomButton noOfPeopleUpButton;
+    private Switch roundSwitch;
+    private boolean roundTotal;
 
+    private AdView adView;
+
+    private static final String TIP_PREF = "tipPref";
+    private static final String ROUND_PREF = "roundPref";
+    private static final String AD_UNIT_ID="ca-app-pub-3069079687424454/8745700010";
+
+    private LinearLayout hideCursor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -115,12 +130,40 @@ public class TipCalculator extends Activity {
             }
         });
 
+        roundSwitch = (Switch)findViewById(R.id.togglebutton);
 
         SharedPreferences preferences = getPreferences(MODE_PRIVATE);
-        if (preferences.contains("tipPref")) {
-            customTipValue = preferences.getInt("tipPref", 15);
+        if (preferences.contains(TIP_PREF)) {
+            customTipValue = preferences.getInt(TIP_PREF, 15);
         }
         customTipTextView.setText(customTipValue + "");
+        if(preferences.contains(ROUND_PREF)) {
+            roundTotal = preferences.getBoolean(ROUND_PREF, false);
+            roundSwitch.setChecked(roundTotal);
+        }
+
+
+        hideCursor = (LinearLayout) findViewById(R.id.focusId);
+
+        // Create an ad.
+//        adView = new AdView(this);
+//        adView.setAdSize(AdSize.SMART_BANNER);
+//        adView.setAdUnitId(AD_UNIT_ID);
+//
+//        LinearLayout layout = (LinearLayout) findViewById(R.id.linearLayoutId);
+//        layout.addView(adView);
+//
+//        // Create an ad request. Check logcat output for the hashed device ID to
+//        // get test ads on a physical device.
+//        AdRequest adRequest = new AdRequest.Builder()
+//                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+//                .addTestDevice("INSERT_YOUR_HASHED_DEVICE_ID_HERE")
+//                .build();
+//
+//        // Start loading the ad in the background.
+//        adView.loadAd(adRequest);
+
+
         //saveTestData();
 //        try {
 //            exportDb();
@@ -180,6 +223,14 @@ public class TipCalculator extends Activity {
     private void updateTipValue() {
         customTip = (billTotal * customTipValue * 0.01);
         finalTotal = customTip + billTotal;
+
+        System.out.println("Round total "+Math.round(finalTotal ));
+        System.out.println("Round Tip "+Math.round(customTip));
+        System.out.println("new Round Tip "+ (Math.round(finalTotal)-billTotal ));
+        if(roundTotal) {
+            finalTotal = Math.round(finalTotal);
+            customTip = finalTotal - billTotal;
+        }
 
         finalTipEditText.setText(getFormattedString(customTip));
         finalTotalEditText.setText(getFormattedString(finalTotal));
@@ -263,18 +314,30 @@ public class TipCalculator extends Activity {
         View view = layoutInflater.inflate(R.layout.tip_pref, null);
 
         final EditText input = (EditText) view.findViewById(R.id.prefEditTextId);
-
+        final Switch sw = (Switch) view.findViewById(R.id.togglePreferenceButton);
+        sw.setChecked(roundTotal);
         AlertDialog.Builder builder = new AlertDialog.Builder(TipCalculator.this);
-        builder.setTitle("Set Default Tip Preference");
+        builder.setTitle(R.string.tipPrefTitle);
         builder.setView(view);
         builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                SharedPreferences preferences = TipCalculator.this.getPreferences(MODE_PRIVATE);
                 if (input.getText().length() > 0) {
-                    SharedPreferences preferences = TipCalculator.this.getPreferences(MODE_PRIVATE);
                     customTipValue = Integer.parseInt(input.getText().toString());
-                    preferences.edit().putInt("tipPref", customTipValue).commit();
+                    preferences.edit().putInt(TIP_PREF, customTipValue).commit();
                     customTipTextView.setText(input.getText().toString());
+                    updateCustomTipValue();
+                }
+                if(sw.isChecked()) {
+                    roundTotal = true;
+                    preferences.edit().putBoolean(ROUND_PREF,roundTotal).commit();
+                    roundSwitch.setChecked(roundTotal);
+                    updateCustomTipValue();
+                }else {
+                    roundTotal = false;
+                    roundSwitch.setChecked(roundTotal);
+                    preferences.edit().putBoolean(ROUND_PREF,roundTotal).commit();
                     updateCustomTipValue();
                 }
             }
@@ -314,6 +377,19 @@ public class TipCalculator extends Activity {
         intent.setData(Uri.parse(APP_URL));
         startActivity(intent);
     }
+
+
+    public void onToggleClicked(View view) {
+        boolean on = ((Switch) view).isChecked();
+        if (on) {
+            roundTotal = on;
+            updateCustomTipValue();
+        } else {
+            roundTotal = on;
+            updateCustomTipValue();
+        }
+    }
+
 
     class BillTotalTextWatchListener implements TextWatcher {
 
@@ -442,6 +518,8 @@ public class TipCalculator extends Activity {
         @Override
         public boolean onTouch(View view, MotionEvent motionEvent) {
             hideKeyboard();
+            billEditText.setNextFocusDownId(R.id.focusId);
+            billEditText.clearFocus();
             return false;
         }
     }

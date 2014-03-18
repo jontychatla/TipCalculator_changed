@@ -2,16 +2,16 @@
 <resources>
     <string name="app_name">TipCalculator</string>
     <string name="bill_total">Bill Total</string>
-    <string name="tip">Tip</string>
-    <string name="total">Total</string>
-    <string name="round_total">Round Total</string>
+    <string name="tip">Tip Amount</string>
+    <string name="total">Total Amount</string>
     <string name="zero">0.00</string>
     <string name="round_zero">0</string>
     <string name="custom">Custom</string>
-    <string name="noOfPeople">No of People</string>
-    <string name="perPerson">Per Person</string>
+    <string name="noOfPeople">No. of People</string>
+    <string name="perPerson">Each Person Pays</string>
     <string name="custom_amount">Custom Amount</string>
     <string name="tip_percentage">Tip %</string>
+    <string name="roundLabel">Round Total</string>
 
 
     <!--Menu options-->
@@ -47,6 +47,8 @@
     <string name="placeMessage">You must enter the place name</string>
     <string name="dateTitle">Date is required</string>
     <string name="dateMessage">You must select the date</string>
+
+    <string name="tipPrefTitle">Set Default Tip Preferences</string>
 
     <string-array name="months">
         <item>Jan</item>

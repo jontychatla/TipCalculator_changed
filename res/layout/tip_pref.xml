@@ -1,19 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center|center_horizontal"
-    >
+    android:gravity="center|center_horizontal">
 
-    <EditText android:id="@+id/prefEditTextId"
-        android:layout_width="100dp"
+    <LinearLayout
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_gravity="center|center_horizontal"
-        android:singleLine="true"
-        android:inputType="number"
-        android:maxLength="3"
-        />
+        android:orientation="horizontal"
+        android:paddingBottom="10dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_vertical"
+            android:gravity="center_vertical"
+            >
+        <TextView
+            android:id="@+id/tipPerTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tip %"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="50dp"
+            />
+
+        <EditText
+            android:id="@+id/prefEditTextId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:inputType="number"
+            android:maxLength="3"
+            android:layout_gravity="right"
+            android:layout_toRightOf="@+id/tipPerTV"
+            android:layout_alignParentRight="true"
+            />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Round Total"
+            android:layout_gravity="center_vertical"
+            android:paddingRight="12dp"
+            />
+
+        <Switch
+            android:id="@+id/togglePreferenceButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOn="On"
+            android:textOff="Off"
+            android:gravity="center|center_horizontal"
+            android:layout_columnSpan="2"
+            android:layout_marginBottom="10dp"
+            />
+
+    </LinearLayout>
+
 </LinearLayout>
